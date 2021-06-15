@@ -10,6 +10,6 @@ class Produto extends Model
     use HasFactory;
 
     public function marcas() {
-        return $this->hasMany(Marca::class);
+        return $this->belongsTo(Marca::class);
     }
 }

@@ -11,7 +11,7 @@
                     @if(auth()->user()->is_admin == 1)
                     <a href="{{url('admin/routes')}}">Admin</a>
                     @else
-                    <div class=”panel-heading”>Normal User</div>
+                    <a href="{{url('admin/routes')}}">Admin</a>
                     @endif
                 </div>
             </div>

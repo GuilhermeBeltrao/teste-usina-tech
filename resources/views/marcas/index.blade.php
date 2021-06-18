@@ -8,16 +8,13 @@
                 @if (auth()->user()->is_admin == 0)
                     <div class="card-header">
                         <a href="{{route("home")}}"> {{__('Dashboard')}}</a>
-                        {{ __('Produtos') }}
-                        <a href="{{route("categorias.index")}}">{{ __('Categorias')}}</a>
-                        <a href="{{route("marcas.index")}}">{{__('Marcas')}}</a> 
+                        <a href="{{route("produtos.index")}}">{{ __('Produtos') }}</a>
+                        <a href="{{route("categorias.index")}}">{{__('Categorias')}}</a>
+                        {{__('Marcas')}}
                     </div>
                     <div class="card-body">
-                        @foreach ($produtos as $produto)
-                            
-                            {{ $produto->nome }}
-                            {{App\Models\Categoria::where('id', $produto->categoria_id)->get('nome')}}
-                            {{App\Models\Marca::where('id', $produto->marca_id)->get('nome')}} <br>
+                        @foreach ($marcas as $marca)
+                            {{ $marca->nome}} <br>
                         @endforeach
                     </div>
                 @else

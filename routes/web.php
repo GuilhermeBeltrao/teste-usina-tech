@@ -25,5 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-route::resource('produto', App\Http\Controllers\ProdutoController::class)
+route::resource('produtos', App\Http\Controllers\ProdutoController::class)
+    ->middleware('auth');
+
+route::resource('categorias', App\Http\Controllers\CategoriaController::class)
+    ->middleware('auth');
+
+route::resource('marcas', App\Http\Controllers\MarcaController::class)
     ->middleware('auth');

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produto;
 use App\Models\Marca;
-use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class ProdutoController extends Controller
+class MarcaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::latest()->paginate(5);
-        //foreach ($produtos as $produto) {
-        //    $marca_nome = Marca::where('id', $produto->marca_id)->get('nome');
-        //    $categoria_nome = Categoria::where('id', $produto->categoria_id)->get('nome');
-        //}
-        return view("produtos.index", compact("produtos"));
-
+        $marcas = Marca::all();
+        return view('marcas.index', compact('marcas'));
     }
 
     /**
@@ -49,10 +42,10 @@ class ProdutoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function show(Produto $produto)
+    public function show(Marca $marca)
     {
         //
     }
@@ -60,10 +53,10 @@ class ProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produto $produto)
+    public function edit(Marca $marca)
     {
         //
     }
@@ -72,10 +65,10 @@ class ProdutoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produto $produto)
+    public function update(Request $request, Marca $marca)
     {
         //
     }
@@ -83,10 +76,10 @@ class ProdutoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Marca  $marca
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produto $produto)
+    public function destroy(Marca $marca)
     {
         //
     }
